@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap'); /* inget ya gaes ini untuk font playfair display */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Satisfy&display=swap'); /* inget ya gaes ini untuk font satisfy */
+
+.seluruh{
+    padding-top: 150px;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Playfair Display', serif ;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-size: cover;
+    text-align: right;
+    background-color: hsl(180, 100%, 27%, 0.7) ;
+}.header h1,p{
+    text-align: left;
+}
+.header p{
+    color: black;
+}.header p{
+    line-height: 0;
+}.header nav {
+    text-align: center; 
+}.header nav a {
+    text-decoration: none; 
+    color: #000; 
+    margin: 0 10px; 
+}.header h6 {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+
+}
+.header h6 a {
+    text-decoration: none;
+    color: #000; /* Warna teks (sesuaikan sesuai kebutuhan) */
+    padding: 5px 10px; /* Spasi di sekitar tautan (sesuaikan sesuai kebutuhan) */
+    border: 1px solid #000; /* Garis tepi (sesuaikan sesuai kebutuhan) */
+    border-radius: 55px;
+    text-align: right;
+}
+
+.konten{
+    
+    background-color: rgb(184, 183, 183);
+    text-align: center;
+}
+.footer{
+    background-color: hsl(180, 100%, 27%);
+    font-family: 'Satisfy', cursive;
+    text-align: center;
+}.footer p{
+    text-align: center;
+}
+
+.input:required{
+    border: 2px solid red;
+
+}.product-card h3, p{
+    color: black;
+} 
+
+
+.product-container {
+    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.product-card {
+    width: 200px;
+    margin: 20px;
+    border: 5px solid black;
+    border-radius: 30px;
+    padding: 10px;
+    text-align: center;
+}
+
+.product-image {
+    max-width: 100%;
+    height: 170px;
+    border-radius: 55px;
+}
+
+.rent-button {
+    background-color: darkcyan;
+    color: black;
+    font-style: bold;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 10px;
+
+
+
+
+    
+}.pencarian{
+    text-align: center;
+}
+.pencarian button{
+    font-family: 'Playfair Display', serif;
+    text-align: right;
+    border-radius: 55px ;
+}.pencarian input{
+    font-family: 'Playfair Display', serif;
+    text-align: left;
+    border-radius: 55px ;
+    width: 70%;
+}
+
+
+
+
+
+
+
+/*ini css untuk produk geser ya gaes*/
+
+
+.geserproduk {
+    padding-top: 30px;
+    padding-bottom: 230px;
+    width: 2250px;
+    height: 100px;
+}
+
+.geser {
+    display: flex;
+    transition: transform 1s ease;
+}
+
+.produkku {
+    width: 250px;
+    background-color: hsl(0, 0%, 100%);
+    color: #000000;
+    text-align: center;
+    padding: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.produkku img {
+    max-width: 100%;
+    height: 70%;
+    border-radius: 30px;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
+}
+
+.produkku p {
+    margin: 0;
+}.navigasi button {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}.navigasi {
+    text-align: justify;
+}
+
+

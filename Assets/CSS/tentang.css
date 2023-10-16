@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap'); /* inget ya gaes ini untuk font playfair display */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Satisfy&display=swap'); /* inget ya gaes ini untuk font satisfy */
+
+body {
+    font-family: 'Playfair Display', serif ;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: hsl(180, 100%, 27%);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.team-member {
+    width: 30%;
+    text-align: center;
+    padding: 20px;
+}
+
+.team-member img {
+    max-width: 80%;
+    height: 40%;
+    width: 70%;
+    border-radius: 30%;
+}.team-member p{
+    text-align: justify;
+}
+
+.footer{
+    background-color: hsl(180, 100%, 27%);
+    font-family: 'Satisfy', cursive;
+    text-align: center;
+}.footer p{
+    text-align: center;
+}

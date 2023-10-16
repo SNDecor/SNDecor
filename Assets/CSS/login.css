@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap'); /* inget ya gaes ini untuk font playfair display */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Satisfy&display=swap'); /* inget ya gaes ini untuk font satisfy */
+        body {
+            font-family: 'Playfair Display', serif ;
+            background-color: rgba(217, 217, 217, 1);
+            text-align: center;
+            padding: 20px;
+        }.kotaklogin h5{
+            font-family: 'Playfair Display', serif ;
+            text-align: left;
+        }
+        .kotaklogin {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 60px 35px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }.kotaklogin h1,p{
+            text-align: center;
+        }
+        .kotaklogin h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .kotaklogin input[type="text"],
+        .kotaklogin input[type="katasandi"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .kotaklogin button {
+            background-color: rgba(125, 123, 123, 1);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 55px ;
+            cursor: pointer;
+        }

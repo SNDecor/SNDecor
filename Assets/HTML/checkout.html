@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-size: cover;
+            text-align: right;
+            background-color: hsl(180, 100%, 27%, 0.7) ;
+        }.header h1,p{
+            text-align: left;
+        }
+        .header p{
+            color: black;
+        }.header p{
+            line-height: 0;
+        }.header nav {
+            text-align: center; 
+        }.header nav a {
+            text-decoration: none; 
+            color: #000; 
+            margin: 0 10px; 
+        }.header h6 {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        
+        }
+        .header h6 a {
+            text-decoration: none;
+            color: #000; /* Warna teks (sesuaikan sesuai kebutuhan) */
+            padding: 5px 10px; /* Spasi di sekitar tautan (sesuaikan sesuai kebutuhan) */
+            border: 1px solid #000; /* Garis tepi (sesuaikan sesuai kebutuhan) */
+            border-radius: 55px;
+            text-align: right;
+        }
+        .body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }.h1{
+            margin-top: 240px;
+        }
+    
+        h2 {
+            margin-top: 180px;
+        }
+        
+        .seluruh {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+    
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    
+        .product-card {
+            width: 300px;
+            margin: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+        }
+    
+        .rent-button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 0 0 10px 10px;
+            cursor: pointer;
+        }
+    
+        .rent-button:hover {
+            background-color: #555;
+        }
+    
+        /* Style untuk halaman checkout */
+        #rent-days {
+            width: 60px;
+        }
+    
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+
+        <div class="header">
+            <h1 >SKALA NISKALA DECORATION</h1>
+            <p>ᬲ᭄ᬓᬮᬦᬶᬲ᭄ᬓᬮᬤᭂᬘᭀᬭᬢᬶᬑᬦ᭄</p>
+            <h6><a href="login.html">MASUK</a></h6>
+            <h6><a href="registrasi.html">DAFTAR</a></h6>
+            <nav>
+                <a href="tentang.html">Tentang Kami</a>
+                <a href="mitra.html">Mitra Kami</a>
+                <a href="gabung.html">Gabung</a>
+                <a href="profil.html">Profil Anda</a>
+            </nav>
+
+        </div>
+    </header>
+    <h2>Halaman Checkout</h2>
+
+    <h3>Detail Pesanan</h3>
+    <p>Nama Produk: <span id="checkout-product-name">Nama Produk</span></p>
+    <p>Harga: Rp <span id="checkout-product-price">100,000</span>/hari</p>
+
+    <!-- Form untuk memasukkan jumlah hari sewa -->
+    <label for="rent-days">Sewa untuk berapa hari:</label>
+    <input type="number" id="rent-days" min="1" value="1">
+    <p>Total Harga: Rp <span id="total-price">100,000</span></p>
+    <button onclick="calculateTotalPrice()">Hitung Total Harga</button>
+  
+    <h3>Informasi Kontak Vendor</h3>
+    <p>Nama Vendor: <span id="vendor-name">Kadek Viola Herlina</span></p>
+    <p>Nomor Rekening: 020305190403</p>
+    <p>Nomor WhatsApp: <a href="https://wa.me/NOMOR_WA_VENDOR">Hubungi Vendor</a></p>
+
+
+
+    <p>Unggah Bukti Pembayaran</p>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="imageUpload">Pilih gambar:</label>
+        <input type="file" name="image" id="imageUpload" accept=".jpg, .jpeg, .png" required>
+        <br>
+        <button onclick="printInvoice()">Unggah & Cetak Invoice</button>
+    </form>
+
+    <script>
+        function calculateTotalPrice() {
+            const productPrice = parseFloat(document.getElementById("checkout-product-price").textContent.replace("Rp ", "").replace(",", ""));
+            const rentDays = parseInt(document.getElementById("rent-days").value);
+            const totalPrice = productPrice * rentDays;
+
+            // Menampilkan total harga
+            document.getElementById("total-price").textContent = totalPrice.toLocaleString("id-ID");
+        }
+
+        function printInvoice() {
+            calculateTotalPrice();
+            window.print(); // Mencetak halaman
+        }
+
+        // Mengambil parameter URL menggunakan JavaScript
+        const urlParams = new URLSearchParams(window.location.search);
+        const productName = urlParams.get("product");
+        const productPrice = urlParams.get("price");
+
+        // Menampilkan informasi produk yang dipilih
+        document.getElementById("checkout-product-name").textContent = productName;
+        document.getElementById("checkout-product-price").textContent = productPrice.toLocaleString("id-ID");
+    </script>
+        
+
+</body>
+</html>
